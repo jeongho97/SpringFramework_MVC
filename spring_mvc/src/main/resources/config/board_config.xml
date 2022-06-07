@@ -3,6 +3,6 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.example.framework.DTO.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.example.framework.DTO.BoardDTO" alias="BoardDTO"/> <!-- 사용하려는 DTO에 대한 축약 이름 board_SQL에서 DTO이름 사용 -->
 	</typeAliases>
 </configuration>

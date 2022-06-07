@@ -12,7 +12,7 @@ import com.example.framework.DTO.BoardDTO;
 public class BoardDAO {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
-	
+	//Dao->board_SQL
 	public int insert(BoardDTO boardDTO) {
 		return sqlSessionTemplate.insert("board.insert",boardDTO);
 	}

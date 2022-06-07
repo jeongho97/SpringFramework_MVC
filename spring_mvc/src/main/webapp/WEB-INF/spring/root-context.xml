@@ -16,8 +16,8 @@
 	
 	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	  	<property name="dataSource" ref="dataSource" />
-	  	<property name="mapperLocations" value="classpath:/sqlMap/**/*_SQL.xml" />
-	  	<property name="configLocation" value="classpath:/config/board_config.xml" />
+	  	<property name="mapperLocations" value="classpath:/sqlMap/**/*_SQL.xml" /> <!-- 우리가 작성할 SQL문이 위치할 장소 -->
+	  	<property name="configLocation" value="classpath:/config/board_config.xml" /> <!-- mybatis XML설정파일의 위치를 지정 -->
 	 </bean>
 	 <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 	  	<constructor-arg index="0" ref="sqlSessionFactory" />

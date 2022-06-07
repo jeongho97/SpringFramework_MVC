@@ -17,18 +17,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.framework.DTO.BoardDTO;
 import com.example.framework.Service.BoardServieImpl;
-@Controller
+@Controller //annotation공부 필요..!!!!!!
 public class BoardController {
 
 	@Autowired
 	BoardServieImpl boardService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	//View->Controller->Service->DAO->board_SQL->DAO->Service->Controller->View
+	@RequestMapping(value = "/", method = RequestMethod.GET) //jsp에서 받아오는 value
 	public ModelAndView home() {
-		List<BoardDTO> boardList=boardService.selectBoards();
+		List<BoardDTO> boardList=boardService.selectBoards(); //servie에서 결과 가져옴
+		//데이터와 뷰를 동시에 설정 가능 ( Model 객체를 사용하면 데이터 값만 반환가능)
 		ModelAndView mav=new ModelAndView();
-		mav.addObject("list",boardList);
-		mav.setViewName("board/home");
+		mav.addObject("list",boardList); //뷰로 보낼 데이터 값
+		mav.setViewName("board/home"); //뷰의 이름
 		
 		return mav;
 	}
@@ -46,13 +48,13 @@ public class BoardController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.GET)
+	@RequestMapping(value = "/create", method = RequestMethod.GET) //매개변수가 보여도 되는 경우에는 GET 방식 사용
 	public String create() {
 		return "board/create";
 
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST) //DB에서 값을 가져올때 매개변수를 숨기기 위해 POST 방식을 사용
 	public ModelAndView createPost(
 			@RequestParam(value="content") String content, //갖고온다
 			@RequestParam(value="title") String title,

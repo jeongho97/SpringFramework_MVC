@@ -14,7 +14,7 @@ public class BoardServieImpl implements BoardService {
 	@Autowired
 	BoardDAO boardDAO;
 	
-	
+	//Service->Dao
 	@Override
 	public String create(BoardDTO boardDTO) {
 		int affectRowCount=boardDAO.insert(boardDTO);
