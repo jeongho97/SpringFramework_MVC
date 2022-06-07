@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+   <insert id="insert" parameterType="BoardDTO" useGeneratedKeys="true" keyProperty="board_id">
+      <![CDATA[
+         insert into board
+         (title, content, user)
+         values
+         (#{title}, #{content}, #{user})
+      ]]>
+   </insert>
+   <select id="select_detail" parameterType="BoardDTO" resultType="BoardDTO">
+   <![CDATA[
+         select
+         title, content, user, insert_date
+         from board
+         where board_id=#{board_id}
+      ]]>
+   </select>
+   <update id="updateById" parameterType="BoardDTO">
+   <![CDATA[
+         update board set
+         title=#{title},
+         content=#{content},
+         user=#{user}
+         where board_id=#{board_id}
+      ]]>
+   </update>
+   <delete id="deleteById" parameterType="BoardDTO">
+   <![CDATA[
+         delete from board
+         where board_id=#{board_id}
+      ]]>
+   </delete>
+   <select id="selectList" parameterType="BoardDTO" resultType="BoardDTO">
+   <![CDATA[
+         select
+         board_id,title, content, user, insert_date
+         from board
+      ]]>
+   </select>
+</mapper>

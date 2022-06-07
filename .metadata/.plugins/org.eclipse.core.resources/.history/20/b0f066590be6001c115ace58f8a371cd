@@ -1,0 +1,13 @@
+package com.example.framework.Service;
+
+import com.example.framework.DTO.BoardDTO;
+
+public class BoardServieImpl implements BoardService {
+
+	@Override
+	public String create(BoardDTO boardDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

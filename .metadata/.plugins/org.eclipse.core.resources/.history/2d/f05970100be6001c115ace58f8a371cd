@@ -1,0 +1,6 @@
+package com.example.framework.Service;
+
+public interface BoardService {
+	String create(BoardDTO boardDTO);
+
+}

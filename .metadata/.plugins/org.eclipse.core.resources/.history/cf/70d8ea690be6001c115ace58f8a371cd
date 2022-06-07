@@ -1,0 +1,20 @@
+package com.example.framework.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.framework.DAO.BoardDAO;
+import com.example.framework.DTO.BoardDTO;
+
+public class BoardServieImpl implements BoardService {
+
+	@Autowired
+	BoardDAO boardDAO;
+	
+	
+	@Override
+	public String create(BoardDTO boardDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

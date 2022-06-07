@@ -1,0 +1,22 @@
+package com.example.framework.DAO;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.example.framework.DTO.BoardDTO;
+
+@Repository
+public class BoardDAO {
+	@Autowired
+	SqlSessionTemplate sqlSessionTemplate;
+	
+	public int insert(BoardDTO boardDTO) {
+		return sqlSessionTemplate.insert("board.insert",boardDTO);
+	}
+	public BoardDTO detail(BoardDTO boardDTO) {
+		return sqlSessionTemplate.selectOne("board.select_detail",boardDTO); //board_SQL.xml에 접근해서 sql결과 가져오
+	}
+
+
+}

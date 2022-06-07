@@ -1,0 +1,8 @@
+package com.example.framework.Service;
+
+import com.example.framework.DTO.BoardDTO;
+
+public interface BoardService {
+	String create(BoardDTO boardDTO);
+
+}
